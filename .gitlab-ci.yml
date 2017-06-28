@@ -1,0 +1,15 @@
+image: kadobot/el
+cache:
+  untracked: true
+  key: "$CI_PROJECT_ID"
+  paths:
+    - node_modules/
+    - .yarn
+test:lint:
+  tags:
+    - docker
+  script:
+    - yarn config set cache-folder .yarn
+    - yarn
+    - yarn run eslint
+    - sonar-scanner
