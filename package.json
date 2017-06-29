@@ -7,7 +7,9 @@
     "ramda": "^0.24.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "recompose": "^0.23.5"
+    "react-router-dom": "^4.1.1",
+    "recompose": "^0.23.5",
+    "styled-components": "^2.1.0"
   },
   "devDependencies": {
     "autoprefixer": "7.1.0",
@@ -56,9 +58,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "precommit": "lint-staged",
-    "lint": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "lint": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" ."
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
@@ -117,7 +117,7 @@
     },
     "rules": {
       "immutable/no-let": 2,
-      "immutable/no-this": 2,
+      "immutable/no-this": 1,
       "immutable/no-mutation": 2,
       "react/jsx-filename-extension": "off"
     }
