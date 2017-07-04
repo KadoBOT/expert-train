@@ -7,8 +7,17 @@
     "ramda": "^0.24.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "recompose": "^0.23.5",
+    "redux": "^3.7.1",
+    "redux-act": "^1.3.0",
+    "redux-devtools": "^3.4.0",
+    "redux-devtools-dock-monitor": "^1.1.2",
+    "redux-devtools-log-monitor": "^1.3.0",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.15.4",
+    "reselect": "^3.0.1",
     "styled-components": "^2.1.0"
   },
   "devDependencies": {
@@ -119,7 +128,15 @@
       "immutable/no-let": 2,
       "immutable/no-this": 1,
       "immutable/no-mutation": 2,
-      "react/jsx-filename-extension": "off"
+      "react/jsx-filename-extension": "off",
+      "react/jsx-no-bind": [2 , {}],
+      "react/jsx-sort-props": [1, {}],
+      "react/jsx-max-props-per-line": [
+        1,
+        {
+          "maximum": 4
+        }
+      ]
     }
   }
 }

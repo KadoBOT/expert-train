@@ -1,29 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-import App from './App';
-import Bundle from './routes/Bundle';
 import registerServiceWorker from './registerServiceWorker';
-import './index.css';
+import App from './components/';
+import configureStore from './store';
+import DevTools from './utils/DevTools';
+import rootSaga from './components/sagas';
 
-const Example = props => <Bundle load={() => import('./modules/Example')} {...props} />;
+const store = configureStore(window.__INITIAL_STATE__); // eslint-disable-line
+store.runSaga(rootSaga);
 
 const Main = () => (
-  <Router>
+  <Provider store={store}>
     <div>
-      <Link to="/">Home</Link>
-      {' '}
-      <Link to="/example">Example</Link>
-      <hr />
-      <Route exact path="/" component={App} />
-      <Route path="/example" component={Example} />
+      <Router>
+        <App />
+      </Router>
+      {process.env.NODE_ENV !== 'production' && <DevTools />}
     </div>
-  </Router>
+  </Provider>
 );
 
 ReactDOM.render(<Main />, document.getElementById('root'));
