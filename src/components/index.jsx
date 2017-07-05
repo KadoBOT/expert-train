@@ -1,9 +1,17 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
+import styled from 'styled-components';
+import { selection } from 'polished';
+
 import routes from './routes';
 
+const Div = styled.div`
+  ${selection({ background: 'lavender' }, '*')}
+  font-family: 'Rubik', sans-serif;
+`;
+
 const App = () => (
-  <div>
+  <Div>
     <Link to="/">Home</Link>
     {' '}
     <Link to="/example">Example</Link>
@@ -17,7 +25,7 @@ const App = () => (
         path={r.path}
       />
     ))}
-  </div>
+  </Div>
 );
 
 export default App;

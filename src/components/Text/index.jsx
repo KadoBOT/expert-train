@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Test = () => <span>¯\_(ツ)_/¯</span>;
+const Test = () => (
+  <div>
+    <p>¯\_(ツ)_/¯</p>
+  </div>
+);
 
 export { Test };
 

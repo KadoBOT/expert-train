@@ -10,10 +10,10 @@ import * as actions from './actions';
 const mapStateToProps = state => ({ home: selector(state) });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  increment: actions.increment,
-  decrement: actions.decrement,
-  incrementAsync: actions.incrementAsync,
-  incrementIfOdd: actions.incrementIfOdd,
+  increment: () => actions.increment(),
+  decrement: () => actions.decrement(),
+  incrementAsync: () => actions.incrementAsync(),
+  incrementIfOdd: () => actions.incrementIfOdd(),
 }, dispatch);
 
 const enhance = recompose(
