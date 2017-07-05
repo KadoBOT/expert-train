@@ -1,12 +1,16 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import styled from 'styled-components';
 import { selection } from 'polished';
 
+import Link from '../commons/Link';
 import routes from './routes';
 
 const Div = styled.div`
-  ${selection({ background: 'lavender' }, '*')}
+  ${selection({
+    color: '#5e5eb5',
+    background: 'lavender',
+  }, '*')}
   font-family: 'Rubik', sans-serif;
 `;
 
