@@ -2,7 +2,6 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { createLogger } from 'redux-logger';
 import createSagaMiddleware, { END } from 'redux-saga';
 
-import DevTools from '../utils/DevTools';
 import rootReducer from '../components/reducers';
 
 
@@ -17,7 +16,7 @@ export default (initialState) => {
         sagaMiddleware,
         createLogger(),
       ),
-      DevTools.instrument(),
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), // eslint-disable-line
     ),
   );
 

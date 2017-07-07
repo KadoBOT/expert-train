@@ -8,7 +8,6 @@ import { fontFace } from 'polished';
 import registerServiceWorker from './registerServiceWorker';
 import App from './components/';
 import configureStore from './store';
-import DevTools from './utils/DevTools';
 import rootSaga from './components/sagas';
 
 const store = configureStore(window.__INITIAL_STATE__); // eslint-disable-line
@@ -28,7 +27,6 @@ const Main = () => (
       <Router>
         <App />
       </Router>
-      {process.env.NODE_ENV !== 'production' && <DevTools />}
     </div>
   </Provider>
 );
